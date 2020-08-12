@@ -32,4 +32,4 @@ jobs:
           # A personal access token needed to push your site after it has been built.
           access-token: ${{ secrets.ACCESS_TOKEN }}
           deploy-branch: gh-pages
-          gatsby-args: --prefix-paths /closure
+          gatsby-args: --prefix-paths

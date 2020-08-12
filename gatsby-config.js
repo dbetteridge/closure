@@ -4,6 +4,7 @@ module.exports = {
     description: `Tracking business impacts from COVID19`,
     author: `@gatsbyjs`,
   },
+  pathPrefx: "/closure",
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
