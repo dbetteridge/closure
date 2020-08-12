@@ -9,7 +9,7 @@ const IndexPage = () => {
   const [dataset, setDatasets] = useState({})
 
   useEffect(() => {
-    fetch("/data/data-files.json")
+    fetch("/closure/data/data-files.json")
       .then(response => response.json())
       .then(json => setDatasets(json))
   }, [])

@@ -17,7 +17,7 @@ const CardMosaic = ({ search }) => {
     const employed_percent = searchParams.get("employed_percent")
 
     setState(s => ({ ...s, population, region, subregion, employed_percent }))
-    fetch(`/data/${region}/${filename}`)
+    fetch(`/closure/data/${region}/${filename}`)
       .then(response => response.text())
       .then(csv => csvtojson().fromString(csv))
       .then(json => setCards(json))
