@@ -28,11 +28,33 @@ const Layout = ({ children }) => {
         style={{
           padding: "1em",
           display: "flex",
+          flexDirection: "row",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        {data.site.siteMetadata.title}
+        <h3>{data.site.siteMetadata.title}</h3>
+        <a
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginLeft: "1rem",
+            width: "100px",
+          }}
+          target={"__blank"}
+          href={"https://github.com/dbetteridge/closure"}
+        >
+          <img
+            src={"/closure/GitHub-Mark-32px.png"}
+            alt="Github Logo"
+            height={32}
+            width={32}
+          />
+
+          <p style={{}}>Source</p>
+        </a>
       </div>
       <div
         style={{
