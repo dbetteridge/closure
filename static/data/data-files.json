@@ -1,0 +1,18 @@
+{
+  "Europe": {
+    "UK": {
+      "filename": "UK.csv",
+      "population": 67886011,
+      "employed_percent": 76.4,
+      "employed_percent_source": "https://tradingeconomics.com/united-kingdom/employment-rate#:~:text=Employment%20Rate%20in%20the%20United%20Kingdom%20averaged%2071.37%20percent%20from,percent%20in%20March%20of%201983."
+    }
+  },
+  "Australasia": {
+    "Australia": {
+      "filename": "Australia.csv",
+      "population": 25529672,
+      "employed_percent": 62.5,
+      "employed_percent_source": "https://tradingeconomics.com/australia/employment-rate#:~:text=Employment%20Rate%20in%20Australia%20averaged,percent%20in%20April%20of%201983."
+    }
+  }
+}

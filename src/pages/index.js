@@ -1,22 +1,58 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
+import ChartistGraph from "react-chartist"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+const IndexPage = () => {
+  const [dataset, setDatasets] = useState({})
+
+  useEffect(() => {
+    fetch("/data/data-files.json")
+      .then(response => response.json())
+      .then(json => setDatasets(json))
+  }, [])
+
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <div>
+        {Object.keys(dataset).map(region => {
+          return (
+            <div
+              key={region}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "left",
+              }}
+            >
+              {region}
+              <div
+                style={{
+                  marginLeft: "2rem",
+                }}
+              >
+                {">"}
+                {Object.keys(dataset[region]).map(subregion => {
+                  return (
+                    <Link
+                      key={subregion}
+                      to={`/region/?region=${region}&subregion=${subregion}&filename=${dataset[region][subregion].filename}&population=${dataset[region][subregion].population}&employed_percent=${dataset[region][subregion].employed_percent}`}
+                    >
+                      {subregion}
+                    </Link>
+                  )
+                })}
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </Layout>
+  )
+}
 
 export default IndexPage

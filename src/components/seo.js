@@ -68,7 +68,12 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link
+        rel="stylesheet"
+        href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"
+      />
+    </Helmet>
   )
 }
 
